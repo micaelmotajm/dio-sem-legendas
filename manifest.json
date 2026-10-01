@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "DIO Sem Legendas",
+  "version": "1.0.0",
+  "description": "Extensão para ocultar legendas em aulas da plataforma DIO.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*.dio.me/*",
+    "https://*.youtube.com/*",
+    "https://*.youtube-nocookie.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.dio.me/*",
+        "https://*.youtube.com/*",
+        "https://*.youtube-nocookie.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
